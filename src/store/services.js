@@ -1,5 +1,15 @@
 import axios from "axios"
-import { PARENT_ONLY_USERNAME, PARENT_ONLY_PASSWORD } from "react-native-dotenv"
+import {
+  REGISTER_USERNAME,
+  REGISTER_PASSWORD,
+  PARENT_ONLY_USERNAME,
+  PARENT_ONLY_PASSWORD
+} from "react-native-dotenv"
+const register = axios.create({
+  baseURL: "https://app3.jackrabbitclass.com/regv2.asp?id=540191",
+  auth: { username: REGISTER_USERNAME, password: REGISTER_PASSWORD },
+  headers: { Accept: "application/json", "Content-Type": "application/json" }
+})
 const parentOnly = axios.create({
   baseURL:
     "https://app.jackrabbitclass.com/jr3.0/ParentPortal/Login?orgID=540191",
